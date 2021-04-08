@@ -50,17 +50,18 @@ if __name__ == '__main__':
             ##############################################################################
 
             # Pruning model (Structured)
-            prune_model_structured(model_sp, device, 0.015)
+            model_sp_new = copy.deepcopy(model_sp)
+            prune_model_structured(model_sp_new, device, 0.015)
 
             # Pruned parameters
-            pr_params = sum([np.prod(p.size()) for p in model_sp.parameters()])
+            pr_params = sum([np.prod(p.size()) for p in model_sp_new.parameters()])
 
             print('Evaluating pruned model (Structured at 0.015)')
             pr_param_str = "\nNumber of Pruned Parameters: %.1fM"%(pr_params/1e6)
             print(pr_param_str)
 
             # Evaluate dataset
-            acc, avg_inf_time = eval_cifar(model_sp, cifar_testloader, device)
+            acc, avg_inf_time = eval_cifar(model_sp_new, cifar_testloader, device)
             print(f'\nAccuracy - {acc}')
             print(f'Average Inference Time - {avg_inf_time}')
             print('\n*********************************************\n')
@@ -68,17 +69,18 @@ if __name__ == '__main__':
             ##############################################################################
 
             # Pruning model (Structured)
-            prune_model_structured(model_sp, device, 0.02)
+            model_sp_new = copy.deepcopy(model_sp)
+            prune_model_structured(model_sp_new, device, 0.02)
 
             # Pruned parameters
-            pr_params = sum([np.prod(p.size()) for p in model_sp.parameters()])
+            pr_params = sum([np.prod(p.size()) for p in model_sp_new.parameters()])
 
             print('Evaluating pruned model (Structured at 0.02)')
             pr_param_str = "\nNumber of Pruned Parameters: %.1fM"%(pr_params/1e6)
             print(pr_param_str)
 
             # Evaluate dataset
-            acc, avg_inf_time = eval_cifar(model_sp, cifar_testloader, device)
+            acc, avg_inf_time = eval_cifar(model_sp_new, cifar_testloader, device)
             print(f'\nAccuracy - {acc}')
             print(f'Average Inference Time - {avg_inf_time}')
             print('\n*********************************************\n')
@@ -86,17 +88,18 @@ if __name__ == '__main__':
             ##############################################################################
 
             # Pruning model (Structured)
-            prune_model_structured(model_sp, device, 0.025)
+            model_sp_new = copy.deepcopy(model_sp)
+            prune_model_structured(model_sp_new, device, 0.025)
 
             # Pruned parameters
-            pr_params = sum([np.prod(p.size()) for p in model_sp.parameters()])
+            pr_params = sum([np.prod(p.size()) for p in model_sp_new.parameters()])
 
             print('Evaluating pruned model (Structured at 0.025)')
             pr_param_str = "\nNumber of Pruned Parameters: %.1fM"%(pr_params/1e6)
             print(pr_param_str)
 
             # Evaluate dataset
-            acc, avg_inf_time = eval_cifar(model_sp, cifar_testloader, device)
+            acc, avg_inf_time = eval_cifar(model_sp_new, cifar_testloader, device)
             print(f'\nAccuracy - {acc}')
             print(f'Average Inference Time - {avg_inf_time}')
             print('\n*********************************************\n')
@@ -104,17 +107,18 @@ if __name__ == '__main__':
             ##############################################################################
 
             # Pruning model (Structured)
-            prune_model_structured(model_sp, device, 0.03)
+            model_sp_new = copy.deepcopy(model_sp)
+            prune_model_structured(model_sp_new, device, 0.03)
 
             # Pruned parameters
-            pr_params = sum([np.prod(p.size()) for p in model_sp.parameters()])
+            pr_params = sum([np.prod(p.size()) for p in model_sp_new.parameters()])
 
             print('Evaluating pruned model (Structured at 0.03)')
             pr_param_str = "\nNumber of Pruned Parameters: %.1fM"%(pr_params/1e6)
             print(pr_param_str)
 
             # Evaluate dataset
-            acc, avg_inf_time = eval_cifar(model_sp, cifar_testloader, device)
+            acc, avg_inf_time = eval_cifar(model_sp_new, cifar_testloader, device)
             print(f'\nAccuracy - {acc}')
             print(f'Average Inference Time - {avg_inf_time}')
             print('\n*********************************************\n')
