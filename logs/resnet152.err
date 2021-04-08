@@ -1,0 +1,41 @@
+                                                                 
+                                                                                
+##############################################                                  
+INFORMATION                                                                     
+##############################################                                  
+                                                                                
+You have loaded the base anaconda environment. For specialized environments,    
+you must first enable them with `source activate [env]`.                        
+                                                                                
+For a full list of environments, type `conda env list`                          
+  
+/home/rsvarma/tmp/resnet/pruning.py:54: RuntimeWarning: invalid value encountered in true_divide
+  rank = rank / np.sqrt(np.sum(rank * rank))
+Traceback (most recent call last):
+  File "run_ip.py", line 117, in <module>
+    acc, avg_inf_time = eval_cifar(model_ip, cifar_testloader, device)
+  File "/home/rsvarma/tmp/resnet/cifar.py", line 58, in eval_cifar
+    outputs = model(inputs)
+  File "/home/rsvarma/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/rsvarma/.local/lib/python3.7/site-packages/torch/nn/parallel/data_parallel.py", line 159, in forward
+    return self.module(*inputs[0], **kwargs[0])
+  File "/home/rsvarma/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/rsvarma/tmp/resnet/models/resnet.py", line 89, in forward
+    out = self.layer1(out)
+  File "/home/rsvarma/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/rsvarma/.local/lib/python3.7/site-packages/torch/nn/modules/container.py", line 117, in forward
+    input = module(input)
+  File "/home/rsvarma/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/rsvarma/tmp/resnet/models/resnet.py", line 57, in forward
+    out = F.relu(self.bn1(self.conv1(x)))
+  File "/home/rsvarma/.local/lib/python3.7/site-packages/torch/nn/modules/module.py", line 727, in _call_impl
+    result = self.forward(*input, **kwargs)
+  File "/home/rsvarma/.local/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 423, in forward
+    return self._conv_forward(input, self.weight)
+  File "/home/rsvarma/.local/lib/python3.7/site-packages/torch/nn/modules/conv.py", line 420, in _conv_forward
+    self.padding, self.dilation, self.groups)
+RuntimeError: Given groups=1, expected weight to be at least 1 at dimension 0, but got weight of size [0, 64, 1, 1] instead
